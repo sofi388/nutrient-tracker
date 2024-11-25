@@ -1,7 +1,5 @@
-from flask import Blueprint
+# app/routes.py
+from flask import render_template
 
-main = Blueprint('main', __name__)
-
-@main.route('/')
-def hello_world():
-    return 'Hello, World!'
+def index():
+    return render_template('index.html') 

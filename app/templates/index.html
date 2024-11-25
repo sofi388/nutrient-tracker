@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrient Tracker App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .column {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .column h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .column p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #000;
+            background-color: #fff;
+            outline: none;
+        }
+
+        button {
+            background: none;
+            color: #000;
+            border: 2px solid #000;
+            padding: 14px 24px;
+            font-size: 1.2rem;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .three-columns {
+            margin-top: 40px;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        footer a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nutrient Tracker App</h1>
+        <p>Track your food intake and manage your health goals effectively.</p>
+    </header>
+
+    <div class="container">
+        <div class="column">
+            <h2>General Intake Tracking</h2>
+            <p>Log your daily meals and monitor the intake of essential nutrients like calories, proteins, fats, and carbohydrates.</p>
+            <p>This mode helps you maintain a balanced diet, monitor trends, and achieve your health goals efficiently.</p>
+            <h3>Calculate Your Daily Nutrient Norms</h3>
+            <form action="/calculate" method="POST">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                <br>
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+                <br>
+                <button type="submit">Calculate</button>
+            </form>
+
+            <div class="three-columns">
+                <h3>Your Nutrient Levels</h3>
+                <div>
+                    <p><strong>Fats:</strong> <span id="fats">-</span> g/day</p>
+                </div>
+                <div>
+                    <p><strong>Proteins:</strong> <span id="proteins">-</span> g/day</p>
+                </div>
+                <div>
+                    <p><strong>Carbs:</strong> <span id="carbs">-</span> g/day</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>Ferrum Intake Tracking</h2>
+            <p>Designed specifically for individuals with low hemoglobin levels, this mode focuses on tracking iron-rich foods.</p>
+            <p>Receive tailored recommendations to boost iron absorption and improve overall health by combining foods effectively.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Nutrient Tracker App. Created with care.
+    </footer>
+</body>
+</html>
