@@ -13,6 +13,6 @@ def create_app():
     from .routes import check_ferrum_level
     app.add_url_rule('/calculate_ferrum', 'check_ferrum_level', check_ferrum_level, methods=["GET", "POST"])
 
-    from .commands import load_data_command
-    app.cli.add_command(load_data_command)
+    from .commands import load_calories
+    app.cli.add_command(load_calories)
     return app
