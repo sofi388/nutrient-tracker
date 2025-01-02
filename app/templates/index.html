@@ -200,12 +200,17 @@
                 <div>
                     <p><strong>Your ferrum level is:</strong> {{ ferrum_level | default('-') }} </p>
                 </div>
+                <div>
+                    <p><strong>Recommendations:</strong> {{ food | default('-') }}</p>
+                    {% if recipies_links %}
+                    <p><strong>Recipes Links:</strong> <a href="http://www.themealdb.com" target="_blank">{{ recipies_links }}</a></p>
+                    {% endif %}
             </div>
         </div>
     </div>
 
-    <footer>
+    <!--<footer>
         &copy; 2024 Nutrient Tracker App. Created with care.
-    </footer>
+    </footer>-->
 </body>
 </html>

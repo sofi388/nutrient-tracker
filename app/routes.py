@@ -1,5 +1,6 @@
 from flask import render_template, request, jsonify
 from .db_utils import get_calories
+from .api_utils import fetch_food_names
 
 def index():
     return render_template('index.html')
@@ -27,11 +28,19 @@ def check_ferrum_level():
     age = float(request.form['age_ferrum'])
     ferrum = float(request.form['ferrum'])
     res = ""
-    if ferrum > 400:
+    food = ""
+    recipies_links = ""
+
+    if ferrum >= 400:
         res = "high"
-    elif ferrum < 400 and ferrum > 30:
+        food = "Avoid iron supplements and iron-rich foods."
+    elif ferrum < 400 and ferrum >= 30:
         res = "normal"
+        food = "Maintain a balanced diet with moderate iron intake."
     else:
         res = "low"
+        recipies = ",\n".join(fetch_food_names("chicken_breast")[1:4]).strip()
+        food = "Eat more meat. Recommended meals: " + recipies + "."
+        recipies_links = "See more recipes at www.themealdb.com"
 
-    return render_template('index.html', ferrum_level = res)
+    return render_template('index.html', ferrum_level=res, food=food, recipies_links=recipies_links)
