@@ -16,26 +16,17 @@ By using this app, users can monitor their nutritional intake, track progress, a
 
 To set up the project locally, follow these steps:
 
-1. **Create a Conda environment**:
+1. **Build the Docker image**:
     ```bash
-    conda create --name nutrition_tracker python=3.9
+    docker build -t nutrient-tracker .
     ```
 
-2. **Activate the environment**:
+2. **Run the Docker container**:
     ```bash
-    conda activate nutrition_tracker
+    docker run -p 5000:5000 nutrient-tracker
     ```
 
-3. **Install dependencies**:
-    - From the project directory, install required packages listed in `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+3. **Access the application**:
+    Open a web browser and go to `http://localhost:5000`.
 
 ---
-
-## Run the App
-
-```
-flask run
-```
