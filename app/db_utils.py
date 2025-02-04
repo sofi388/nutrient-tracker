@@ -68,14 +68,14 @@ def get_calories(age , sex, activity_level):
     query = "SELECT calorie FROM calories WHERE age_diapason = %s AND sex = %s AND activity_level = %s"
     
     # Print the query and data for debugging
-    print("Executing query:", query)
-    print("With data:", data)
+    # print("Executing query:", query)
+    # print("With data:", data)
 
     cursor.execute(query, data)
     result = cursor.fetchall()
 
     # Print the result for debugging
-    print("Query result:", result)
+    # print("Query result:", result)
 
     cursor.close()
     db.close()

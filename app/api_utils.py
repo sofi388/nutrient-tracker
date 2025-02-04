@@ -18,4 +18,3 @@ def fetch_food_names(food_name):
 if __name__ == "__main__":
     meal_names = fetch_food_names("chicken_breast")
     print(meal_names)
-

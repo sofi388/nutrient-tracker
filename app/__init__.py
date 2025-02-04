@@ -6,6 +6,9 @@ def create_app():
     from .routes import index 
     app.add_url_rule('/', 'index', index)  
 
+    from .routes import default
+    app.add_url_rule('/default', 'default', default)
+    
     from .routes import calculate_calorie_intake
     app.add_url_rule('/calculate', 'calculate_calorie_intake', calculate_calorie_intake, methods=["GET", "POST"])
 

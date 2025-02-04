@@ -16,3 +16,6 @@ AGE_DIAPASONS = [
     "21-25", "26-30", "31-35", "36-40", "41-45", "46-50", "51-55", "56-60",
     "61-65", "66-70", "71-75", "76-1000"
 ]
+
+API_KEY = os.getenv('API_KEY')
+API_BASE_URL = os.getenv('API_BASE_URL')

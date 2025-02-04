@@ -2,8 +2,13 @@ from flask import render_template, request, jsonify
 from .db_utils import get_calories
 from .api_utils import fetch_food_names
 
+
 def index():
     return render_template('index.html')
+
+
+def default():
+    return jsonify({"message": "Hello, world!"})
 
 
 def calculate_calorie_intake():
