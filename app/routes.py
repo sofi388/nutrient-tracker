@@ -12,8 +12,10 @@ def default():
 
 
 def calculate_calorie_intake():
-    weight = float(request.form['weight'])
-    height = float(request.form['height'])
+    """ Calculate calorie intake based on user input. """
+
+    # weight = float(request.form['weight']) # For BMR formula
+    # height = float(request.form['height']) # For BMR formula
     age = float(request.form['age'])
     
     if request.form.get('sex') == 'male':
@@ -24,12 +26,14 @@ def calculate_calorie_intake():
     activity_level = request.form['activity_level']
     calorie_intake = get_calories(age, sex, activity_level)
 
-    # calorie_intake = 10 * weight + 6.25 * height - 5 * age + 5     # BMR formula
+    # calorie_intake = 10 * weight + 6.25 * height - 5 * age + 5   # BMR formula
 
     return render_template('index.html', calories=calorie_intake)
 
  
 def check_ferrum_level():
+    """ Check ferrum level based on user input. """
+
     age = float(request.form['age_ferrum'])
     ferrum = float(request.form['ferrum'])
     res = ""
@@ -46,6 +50,6 @@ def check_ferrum_level():
         res = "low"
         recipies = ",\n".join(fetch_food_names("chicken_breast")[1:4]).strip()
         food = "Eat more meat. Recommended meals: " + recipies + "."
-        recipies_links = "See more recipes at www.themealdb.com"
+        recipies_links = "See more recipes at meatrecipes.net"
 
     return render_template('index.html', ferrum_level=res, food=food, recipies_links=recipies_links)

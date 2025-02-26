@@ -1,10 +1,6 @@
 *.pyc
-*.pyo
 __pycache__/
-
 *.env
 .env/
-
 cheat.txt
-
 app/test/

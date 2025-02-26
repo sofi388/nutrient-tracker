@@ -13,8 +13,9 @@ def get_db_connection():
 
 
 def load_calories_to_db(path):
-    csv_data = csv.reader(path)
+    """Load CSV data to the database."""
 
+    csv_data = csv.reader(path)
     data = []
     csv_reader = csv.DictReader(csv_data.splitlines())
     for row in csv_reader:
@@ -58,10 +59,10 @@ def calculate_age_diapason(age):
 
 
 def get_calories(age , sex, activity_level):
+    """Perform SQL queries to get the calories."""
 
     age_diapason = calculate_age_diapason(age)
     db = get_db_connection()
-
     cursor = db.cursor(dictionary=True)
     data = (age_diapason, sex, activity_level)
 
